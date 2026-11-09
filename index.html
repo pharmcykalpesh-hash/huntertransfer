@@ -157,134 +157,148 @@
       </div>
     </header>
     <!-- Main Workspace -->
-        <section class="no-print bg-slate-900 border-b border-slate-700 px-4 py-3">
+    <section class="no-print bg-slate-900 border-b border-slate-700 px-4 py-3">
       <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
         <div class="min-w-0">
-          <div class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span><strong class="text-sm text-white">Local database + automatic save & daily backup</strong><span id="storage-status" class="text-xs text-emerald-300">Starting…</span></div>
-          <p class="text-xs text-slate-400 mt-1"><span id="record-status">0 transfer records · 0 audit entries</span> · IndexedDB storage · automatic save + daily snapshots</p>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <button onclick="downloadFullBackup()" class="px-3 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold"><i class="fa-solid fa-download mr-1"></i> Backup All Data</button>
-          <button onclick="document.getElementById('restore-backup-file').click()" class="px-3 py-2 rounded-lg bg-blue-700 hover:bg-blue-600 text-white text-xs font-bold"><i class="fa-solid fa-upload mr-1"></i> Restore Backup</button>
-          <button onclick="restoreLatestAutoBackup()" class="px-3 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 text-white text-xs font-bold">Restore Daily Backup</button>
-          <button onclick="exportAllExcel()" class="px-3 py-2 rounded-lg bg-indigo-700 hover:bg-indigo-600 text-white text-xs font-bold"><i class="fa-solid fa-file-excel mr-1"></i> Export Excel</button>
-          <button onclick="exportAllCSV()" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold"><i class="fa-solid fa-file-csv mr-1"></i> Export CSV</button>
-          <input id="restore-backup-file" type="file" accept=".json,application/json" class="hidden" onchange="restoreFullBackup(event)">
-        </div>
-      </div>
-      <div class="max-w-7xl mx-auto mt-2 text-[11px] text-amber-200">Important: this file automatically saves on this device. To move records to another phone/computer, download a backup and restore it there. True automatic cross-device cloud sync requires a company-approved cloud database/login; a standalone HTML file cannot provide that by itself.</div>
-    </section>
-<main class="flex-1 overflow-y-auto p-4 sm:p-6 max-w-7xl mx-auto w-full">
-      <!-- ================= SECTION 1: LOWER MEZZ PERSON ================= -->
-      <section id="tab-section1" class="space-y-6">
-        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl">
-          <div class="border-b border-slate-700 pb-4 mb-6 flex justify-between items-center flex-wrap gap-3">
-            <div>
-              <h2 class="text-base font-bold text-white flex items-center gap-2">
-                <span class="bg-hunter-600 text-white w-6 h-6 rounded-full inline-flex items-center justify-center text-xs">1</span>
-                Lower Mezz Person (Compounder / Helper) - Batch Entry
-              </h2>
-              <p class="text-xs text-slate-400 mt-0.5">Enter batch info, set container count, and validate catalog part numbers in real-time.</p>
-            </div>
-            <!-- Active Slip Badge -->
-            <div class="bg-slate-900 border border-hunter-500/50 px-4 py-2 rounded-xl flex items-center gap-2.5 shadow-md">
-              <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Next Slip #:</span>
-              <span id="active-slip-badge" class="text-base font-mono font-black text-hunter-400">#190101</span>
-            </div>
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400">
+            </span>
+            <strong class="text-sm text-white">Local database + automatic save & daily backup</strong>
+            <span id="storage-status" class="text-xs text-emerald-300">Starting…</span>
           </div>
-          <form id="mezzForm" onsubmit="handleMezzSubmit(event)" class="space-y-6">
-            <!-- Shared Batch Header Info -->
-            <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 space-y-4">
-              <h3 class="text-xs font-bold text-hunter-400 uppercase tracking-wider">Step A: Shared Batch & Product Information</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <p class="text-xs text-slate-400 mt-1">
+            <span id="record-status">0 transfer records · 0 audit entries</span> · IndexedDB storage · automatic save + daily snapshots</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="downloadFullBackup()" class="px-3 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold">
+              <i class="fa-solid fa-download mr-1">
+              </i> Backup All Data</button>
+              <button onclick="document.getElementById('restore-backup-file').click()" class="px-3 py-2 rounded-lg bg-blue-700 hover:bg-blue-600 text-white text-xs font-bold">
+                <i class="fa-solid fa-upload mr-1">
+                </i> Restore Backup</button>
+                <button onclick="restoreLatestAutoBackup()" class="px-3 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 text-white text-xs font-bold">Restore Daily Backup</button>
+                <button onclick="exportAllExcel()" class="px-3 py-2 rounded-lg bg-indigo-700 hover:bg-indigo-600 text-white text-xs font-bold">
+                  <i class="fa-solid fa-file-excel mr-1">
+                  </i> Export Excel</button>
+                  <button onclick="exportAllCSV()" class="px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold">
+                    <i class="fa-solid fa-file-csv mr-1">
+                    </i> Export CSV</button>
+                    <input id="restore-backup-file" type="file" accept=".json,application/json" class="hidden" onchange="restoreFullBackup(event)">
+                  </div>
+                </div>
+                <div class="max-w-7xl mx-auto mt-2 text-[11px] text-amber-200">Important: this file automatically saves on this device. To move records to another phone/computer, download a backup and restore it there.</div>
+              </section>
+              <main class="flex-1 overflow-y-auto p-4 sm:p-6 max-w-7xl mx-auto w-full">
+                <!-- ================= SECTION 1: LOWER MEZZ PERSON ================= -->
+                <section id="tab-section1" class="space-y-6">
+                  <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl">
+                    <div class="border-b border-slate-700 pb-4 mb-6 flex justify-between items-center flex-wrap gap-3">
+                      <div>
+                        <h2 class="text-base font-bold text-white flex items-center gap-2">
+                          <span class="bg-hunter-600 text-white w-6 h-6 rounded-full inline-flex items-center justify-center text-xs">1</span>
+                          Lower Mezz Person (Compounder / Helper) - Batch Entry
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Enter batch info, set container count, and validate catalog part numbers in real-time.</p>
+                      </div>
+                      <!-- Active Slip Badge -->
+                      <div class="bg-slate-900 border border-hunter-500/50 px-4 py-2 rounded-xl flex items-center gap-2.5 shadow-md">
+                        <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Next Slip #:</span>
+                        <span id="active-slip-badge" class="text-base font-mono font-black text-hunter-400">#190101</span>
+                      </div>
+                    </div>
+                    <form id="mezzForm" onsubmit="handleMezzSubmit(event)" class="space-y-6">
+                      <!-- Shared Batch Header Info -->
+                      <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 space-y-4">
+                        <h3 class="text-xs font-bold text-hunter-400 uppercase tracking-wider">Step A: Shared Batch & Product Information</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                          <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Part Number <span class="text-rose-400">*</span>
+                          </label>
+                          <input type="text" id="partNumber" required placeholder="e.g. BW-REV-500" oninput="lookupProductDescription()" list="partNumberList"
+                          class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500 font-mono">
+                          <datalist id="partNumberList">
+                            <!-- Populated dynamically -->
+                          </datalist>
+                          <p id="partNumberError" class="text-[11px] text-rose-400 mt-1 hidden font-semibold">⚠️ Part number not found in Master Catalog.</p>
+                        </div>
+                        <div class="sm:col-span-2">
+                          <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Product Description <span class="text-rose-400">*</span>
+                        </label>
+                        <input type="text" id="productDescription" required placeholder="e.g. Body Wash - Lavender Refresh" readonly
+                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
+                        <p id="productDescError" class="text-[11px] text-rose-400 mt-1 hidden font-semibold">⚠️ Invalid part number entered. Description unavailable.</p>
+                      </div>
+                      <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Job # <span class="text-rose-400">*</span>
+                      </label>
+                      <input type="text" id="jobNumber" required placeholder="e.g. JOB-99821"
+                      class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
+                    </div>
+                    <div>
+                      <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Shift <span class="text-rose-400">*</span>
+                    </label>
+                    <select id="shift" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500 font-semibold text-hunter-400">
+                      <option value="Shift 1">Shift 1 (Morning)</option>
+                      <option value="Shift 2">Shift 2 (Afternoon)</option>
+                      <option value="Shift 3">Shift 3 (Night)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Mfg Date <span class="text-rose-400">*</span>
+                  </label>
+                  <input type="date" id="mfgDate" required
+                  class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
+                </div>
                 <div>
-                  <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Part Number <span class="text-rose-400">*</span>
+                  <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Transfer Date <span class="text-rose-400">*</span>
                 </label>
-                <input type="text" id="partNumber" required placeholder="e.g. BW-REV-500" oninput="lookupProductDescription()" list="partNumberList"
-                class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500 font-mono">
-                <datalist id="partNumberList">
-                  <!-- Populated dynamically -->
-                </datalist>
-                <p id="partNumberError" class="text-[11px] text-rose-400 mt-1 hidden font-semibold">⚠️ Part number not found in Master Catalog.</p>
+                <input type="date" id="transferDate" required
+                class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
               </div>
               <div class="sm:col-span-2">
-                <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Product Description <span class="text-rose-400">*</span>
+                <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Compounder / Helper Name <span class="text-rose-400">*</span>
               </label>
-              <input type="text" id="productDescription" required placeholder="e.g. Body Wash - Lavender Refresh" readonly
+              <input type="text" id="compounderName" required placeholder="e.g. John Doe"
               class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
-              <p id="productDescError" class="text-[11px] text-rose-400 mt-1 hidden font-semibold">⚠️ Invalid part number entered. Description unavailable.</p>
             </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Job # <span class="text-rose-400">*</span>
-            </label>
-            <input type="text" id="jobNumber" required placeholder="e.g. JOB-99821"
-            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
           </div>
-          <div>
-            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Shift <span class="text-rose-400">*</span>
-          </label>
-          <select id="shift" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500 font-semibold text-hunter-400">
-            <option value="Shift 1">Shift 1 (Morning)</option>
-            <option value="Shift 2">Shift 2 (Afternoon)</option>
-            <option value="Shift 3">Shift 3 (Night)</option>
-          </select>
         </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Mfg Date <span class="text-rose-400">*</span>
-        </label>
-        <input type="date" id="mfgDate" required
-        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
+        <!-- Number of Totes Selector -->
+        <div class="bg-slate-900 p-4 rounded-xl border border-hunter-600/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <label class="block text-xs font-bold text-hunter-400 uppercase mb-1">Number of Totes / Containers in Batch <span class="text-rose-400">*</span>
+          </label>
+          <p class="text-[11px] text-slate-400">Enter total count (e.g., 12) to instantly generate individual configuration rows below.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="number" min="1" max="50" id="numberOfTotes" value="1" onchange="renderToteRows()" onkeyup="renderToteRows()"
+          class="w-28 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white font-mono font-bold text-center focus:outline-none focus:border-hunter-500">
+        </div>
+      </div>
+      <!-- Dynamic Tote Rows Configuration Container -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Step B: Individual Tote Configurations (<span id="tote-rows-count">1</span> Totes)</h3>
+        <div id="toteRowsContainer" class="space-y-3 max-h-[450px] overflow-y-auto pr-1">
+          <!-- Populated dynamically -->
+        </div>
       </div>
       <div>
-        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Transfer Date <span class="text-rose-400">*</span>
-      </label>
-      <input type="date" id="transferDate" required
-      class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
-    </div>
-    <div class="sm:col-span-2">
-      <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Compounder / Helper Name <span class="text-rose-400">*</span>
-    </label>
-    <input type="text" id="compounderName" required placeholder="e.g. John Doe"
-    class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
+        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Notes / Batch Remarks</label>
+        <textarea id="notes" rows="2" placeholder="Optional batch notes..."
+          class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
+        </textarea>
+      </div>
+      <div class="flex flex-col sm:flex-row justify-end items-center gap-3 pt-4 border-t border-slate-700">
+        <button type="button" onclick="resetMezzForm()" class="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-700 transition text-sm font-medium">
+          Clear Form
+        </button>
+        <button type="submit" class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-hunter-600 hover:bg-hunter-500 text-white font-semibold shadow-lg shadow-hunter-900/50 transition flex items-center justify-center gap-2 text-sm">
+          <i class="fa-solid fa-floppy-disk">
+          </i> Submit Batch Totes to Forklift Queue (<span id="btn-total-labels">1</span> Slips)
+        </button>
+      </div>
+    </form>
   </div>
-</div>
-</div>
-<!-- Number of Totes Selector -->
-<div class="bg-slate-900 p-4 rounded-xl border border-hunter-600/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-  <div>
-    <label class="block text-xs font-bold text-hunter-400 uppercase mb-1">Number of Totes / Containers in Batch <span class="text-rose-400">*</span>
-  </label>
-  <p class="text-[11px] text-slate-400">Enter total count (e.g., 12) to instantly generate individual configuration rows below.</p>
-</div>
-<div class="flex items-center gap-2">
-  <input type="number" min="1" max="50" id="numberOfTotes" value="1" onchange="renderToteRows()" onkeyup="renderToteRows()"
-  class="w-28 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white font-mono font-bold text-center focus:outline-none focus:border-hunter-500">
-</div>
-</div>
-<!-- Dynamic Tote Rows Configuration Container -->
-<div class="space-y-3">
-  <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Step B: Individual Tote Configurations (<span id="tote-rows-count">1</span> Totes)</h3>
-  <div id="toteRowsContainer" class="space-y-3 max-h-[450px] overflow-y-auto pr-1">
-    <!-- Populated dynamically -->
-  </div>
-</div>
-<div>
-  <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Notes / Batch Remarks</label>
-  <textarea id="notes" rows="2" placeholder="Optional batch notes..."
-    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2 text-sm text-white focus:outline-none focus:border-hunter-500">
-  </textarea>
-</div>
-<div class="flex flex-col sm:flex-row justify-end items-center gap-3 pt-4 border-t border-slate-700">
-  <button type="button" onclick="resetMezzForm()" class="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-700 transition text-sm font-medium">
-    Clear Form
-  </button>
-  <button type="submit" class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-hunter-600 hover:bg-hunter-500 text-white font-semibold shadow-lg shadow-hunter-900/50 transition flex items-center justify-center gap-2 text-sm">
-    <i class="fa-solid fa-floppy-disk">
-    </i> Submit Batch Totes to Forklift Queue (<span id="btn-total-labels">1</span> Slips)
-  </button>
-</div>
-</form>
-</div>
 </section>
 <!-- ================= SECTION 2: FORKLIFT PERSON ================= -->
 <section id="tab-section2" class="space-y-6 hidden">
